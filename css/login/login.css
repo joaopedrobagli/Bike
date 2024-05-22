@@ -1,0 +1,93 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #111111;
+	margin: 0;
+	padding: 0;
+}
+
+.conteudo-login {
+	margin-top: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.conteudo-formulario {
+	background-color: #fff;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+label {
+	display: flex;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 50px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+input[type="text"]{
+	width: 93%;
+	padding: 15px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	border: 1px solid #000000;
+}
+input[type="password"] {
+	width: 93%;
+	padding: 15px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	border: 1px solid #000000;
+}
+#botao-log {
+	width: 93%;
+	padding: 10px;
+	background-color: #cbb2b2;
+	color: #525252;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	border-radius: 10px;
+	transition: background-color 0.3s ease;
+}
+#botao-log:hover {
+	background-color: #442f2f;
+	color:#fff;
+	border-radius: 10px;
+}
+.conteudo-formulario {
+	position: relative; /* Posição relativa para elementos filhos usarem posições absolutas */
+}
+.erro-bolha {
+	position: absolute; /* Posição absoluta para a bolha */
+	top: calc(100% + 10px); /* Posiciona a bolha abaixo dos inputs */
+	left: 50%; /* Centraliza horizontalmente */
+	transform: translateX(-50%); /* Centraliza horizontalmente */
+	background-color: red;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	display: none; /* Inicia oculto */
+	opacity: 0; /* Inicia totalmente transparente */
+	visibility: hidden; /* Inicia invisível */
+	transition: opacity 0.3s ease, visibility 0.3s ease; /* Efeito de transição suave */
+	animation: fadeIn 0.3s ease forwards; 
+}
+/* Estilo para a seta da bolha */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.erro-bolha.mostrar {
+	display: block; /* Mostra a bolha quando a classe "mostrar" é adicionada */
+	opacity: 1; /* Torna a bolha totalmente visível */
+	visibility: visible; /* Torna a bolha visível */
+}
+

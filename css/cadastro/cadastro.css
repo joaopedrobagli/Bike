@@ -1,0 +1,62 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111111; 
+}
+header {
+    background-color: #333;
+    color: #e82626;
+    padding: 10px 0;
+    text-align: center;
+}
+.conteudo-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.conteudo-formulario-cadastro {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+label {
+    display: flex;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 50px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+input[type="text"]{
+    width: 96%;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+input[type="password"] {
+    width: 96%;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+#botao {
+    width: 96%;
+    padding: 10px;
+    background-color: #cbb2b2;
+	color: #525252;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#botao:hover {
+    background-color: #442f2f;
+	color:#fff;
+	border-radius: 5px;
+}
