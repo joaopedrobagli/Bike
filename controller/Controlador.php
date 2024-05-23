@@ -40,41 +40,26 @@ class Controlador {
         $this->bancoDeDados->inserirProduto($produto);
     }
 
-    public function visualizarCliente(){
-        $cli="";
-        $listaCliente = $this->bancoDeDados->retornarCliente();
-        while($cliente = mysqli_fetch_assoc($listaCliente)){
-            $cli .= "<section class=\"conteudo-bloco\">" .
-                   "<h2>" . $cliente["nome"] . "</h2>" .
-                   "<p>Email: " . $cliente["email"] . "</p>" .
-                   "</section>";
-        }
-        return $cli;
-    }
-
-    public function visualizarProduto(){
+    public function visualizarProduto() {
         $prod = "";
         $listaProduto = $this->bancoDeDados->retornarProduto();
         while ($produto = mysqli_fetch_assoc($listaProduto)) {
             $prod .= "<section class=\"conteudo-bloco\">" .
                      "<h2>" . $produto["nome"] . "</h2>" .
                      "<p>Preço: " . $produto["valor"] . "</p>";
-                     
             
             if (isset($produto["imagem"])) {
-                
-                $prod .= "<img src=\"../imgBanco/" . $produto["imagem"] . "\" alt=\"" . $produto["nome"] . "\">";
+                $imageURL = "../imgBanco/" . $produto["imagem"];
+                $prod .= "<img src=\"$imageURL\" alt=\"" . $produto["nome"] . "\">";
             } else {
+                $imageURL = ""; // Se a imagem não estiver disponível, deixe a URL vazia
                 $prod .= "<p>Imagem não disponível</p>";
             }
                      
-            $prod .= "<button class=\"btn add-to-cart-btn\" data-product-name=\"" . $produto["nome"] . "\" data-price=\"" . $produto["valor"] . "\">Adicionar ao Carrinho</button>" .
+            $prod .= "<button class=\"btn add-to-cart-btn\" data-product-name=\"" . $produto["nome"] . "\" data-product-value=\"" . $produto["valor"] . "\" data-product-image=\"$imageURL\">Adicionar ao Carrinho</button>" .
                      "</section>";
         }
         return $prod;
     }
-    
-    
-    
-}
+}    
 ?>

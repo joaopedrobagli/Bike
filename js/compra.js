@@ -1,31 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    const cartItemsList = document.getElementById('cart-items-list');
+    const cartItemsList = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
-    const checkoutBtn = document.getElementById('checkout-btn');
     const cartIcon = document.getElementById('cart-icon');
+    const cart = document.getElementById('cart');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const cartItemCount = document.getElementById('cart-item-count');
     let total = 0;
     let itemCount = 0;
 
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const product = this.parentElement;
-            const productName = product.getAttribute('data-product-name');
-            const productPriceString = product.getAttribute('data-price');
-            console.log("Preço como string:", productPriceString); // Verifique o valor do preço como string
-            const productPrice = parseFloat(productPriceString); // Convertendo para um número
-            console.log("Preço como número:", productPrice); // Verifique o valor do preço como número
+            const productName = this.getAttribute('data-product-name');
+            const productPrice = parseFloat(this.getAttribute('data-product-value'));
+            const productImage = this.getAttribute('data-product-image');
+
+            if (!productName || isNaN(productPrice)) {
+                console.error('Invalid product data:', { productName, productPrice });
+                return;
+            }
+
             total += productPrice;
             itemCount++;
-            cartTotal.innerText = total.toFixed(2);
-            document.getElementById('cart-item-count').innerText = itemCount;
-    
+
+            cartTotal.innerText = `R$ ${total.toFixed(2)}`;
+            cartItemCount.innerText = itemCount;
+
             const cartItem = document.createElement('li');
-            cartItem.innerText = productName;
+            cartItem.innerHTML = `
+                <img src="${productImage}" alt="${productName}" class="cart-item-image">
+                <span>${productName}</span> - <span>R$ ${productPrice.toFixed(2)}</span>
+            `;
             cartItemsList.appendChild(cartItem);
+
+            console.log(`Added to cart: ${productName} - R$ ${productPrice.toFixed(2)}`);
         });
     });
-    
 
     cartIcon.addEventListener('click', function() {
         cart.classList.toggle('hidden');
@@ -33,15 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     checkoutBtn.addEventListener('click', function() {
         alert(`Total da Compra: R$ ${total.toFixed(2)}`);
-        // Aqui você pode adicionar lógica para enviar a compra para um servidor, etc.
+        // Adicione aqui a lógica para enviar a compra para um servidor, etc.
     });
 
     // Adicionar um evento de clique ao ícone do carrinho para rolar até a seção do carrinho
     cartIcon.addEventListener('click', function(event) {
-        // Impedir o comportamento padrão do link
         event.preventDefault();
-
-        // Rolar até a seção do carrinho com uma animação suave
         cart.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
