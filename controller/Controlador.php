@@ -40,6 +40,18 @@ class Controlador {
         $this->bancoDeDados->inserirProduto($produto);
     }
 
+    public function visualizarCliente(){
+        $cli="";
+        $listaCliente = $this->bancoDeDados->retornarCliente();
+        while($cliente = mysqli_fetch_assoc($listaCliente)){
+            $cli .= "<section class=\"conteudo-bloco\">" .
+                   "<h2>" . $cliente["nome"] . "</h2>" .
+                   "<p>Email: " . $cliente["email"] . "</p>" .
+                   "</section>";
+        }
+        return $cli;
+    }
+
     public function visualizarProduto() {
         $prod = "";
         $listaProduto = $this->bancoDeDados->retornarProduto();
