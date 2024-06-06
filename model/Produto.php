@@ -4,13 +4,14 @@ class Produto{
 
     protected $nome;
     protected $valor;
-    
+    protected $imagem;
 
 
-    public function __construct($nome, $valor)
+    public function __construct($nome, $valor, $imagem)
     {
         $this->nome = $nome;
         $this->valor = $valor;
+        $this->imagem = $imagem;
     }
 
     public function get_nome(){

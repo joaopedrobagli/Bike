@@ -54,18 +54,20 @@ INSERT INTO `cliente` (`nome`, `email`, `cpf`, `senha`) VALUES
 --
 
 CREATE TABLE `produto` (
-  `nome` text NOT NULL,
-  `valor` int(11) NOT NULL
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `nome` TEXT NOT NULL,
+  `valor` INT NOT NULL,
+  `imagem` TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Extraindo dados da tabela `produto`
 --
 
-INSERT INTO `produto` (`nome`, `valor`) VALUES
-('joao', 1),
-('skate', 11),
-('skatee fred', 21);
+INSERT INTO `produto` (`nome`, `valor`, `imagem`) VALUES
+('joao', 1, ''),
+('skate', 11, ''),
+('skatee fred', 21, '');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

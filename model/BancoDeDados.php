@@ -51,10 +51,12 @@ class BancoDeDados {
         mysqli_query($conexao,$consulta);
     }
 
-    public function inserirProduto($produto){
+    public function inserirProduto($produto, $caminhoImagem){
         $conexao = $this->obterConexao();
-        $consultaProd= "INSERT INTO produto (nome, valor) 
-                     VALUES ('{$produto->get_nome()}','{$produto->get_valor()}')";
+        $nome = $produto->get_nome();
+        $valor = $produto->get_valor();
+        $consultaProd= "INSERT INTO produto (nome, valor, imagem) 
+                     VALUES ('$nome','$valor','$caminhoImagem')";
         mysqli_query($conexao,$consultaProd);
     }
 

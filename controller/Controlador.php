@@ -35,11 +35,11 @@ class Controlador {
         $this->bancoDeDados->inserirCliente($cliente);
     }
 
-    public function cadastrarProduto($nome, $valor){
-        $produto = new Produto($nome, $valor);
-        $this->bancoDeDados->inserirProduto($produto);
+    public function cadastrarProduto($nome, $valor, $caminhoImagem){
+        $produto = new Produto($nome, $valor, $imagem);
+        $this->bancoDeDados->inserirProduto($produto, $caminhoImagem);
     }
-
+    
     public function visualizarCliente(){
         $cli="";
         $listaCliente = $this->bancoDeDados->retornarCliente();
@@ -51,6 +51,7 @@ class Controlador {
         }
         return $cli;
     }
+    
 
     public function visualizarProduto() {
         $prod = "";
@@ -62,7 +63,7 @@ class Controlador {
             
             if (isset($produto["imagem"])) {
                 $imageURL = "../imgBanco/" . $produto["imagem"];
-                $prod .= "<img src=\"$imageURL\" alt=\"" . $produto["nome"] . "\">";
+                $prod .= "<img src=\"$imageURL\" alt=\"" . $produto["nome"] . "\" style=\"max-width: 90px; max-height: 90px; width: auto; height: auto;\">";
             } else {
                 $imageURL = ""; // Se a imagem não estiver disponível, deixe a URL vazia
                 $prod .= "<p>Imagem não disponível</p>";
