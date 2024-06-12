@@ -25,11 +25,11 @@ a {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: 110px;
+  height: 90px;
   display: block;
 }
 
-img[src$=".jpg"] {
-  border-radius: 4px;
+img[src$=".jpg,png,jpeg"] {
+  border-radius: 10px;
 }

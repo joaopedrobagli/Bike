@@ -110,8 +110,8 @@ body {
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
+    width: 10px;
+    height: 10px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }

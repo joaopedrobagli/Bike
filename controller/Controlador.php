@@ -59,7 +59,7 @@ class Controlador {
         while ($produto = mysqli_fetch_assoc($listaProduto)) {
             $prod .= "<section class=\"conteudo-bloco\">" .
                      "<h2>" . $produto["nome"] . "</h2>" .
-                     "<p>Preço: " . $produto["valor"] . "</p>";
+                     "<p>Preço: R$ " . $produto["valor"]  . "</p>";
             
             if (isset($produto["imagem"])) {
                 $imageURL = "../imgBanco/" . $produto["imagem"];
