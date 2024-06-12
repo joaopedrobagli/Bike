@@ -52,6 +52,7 @@ class Controlador {
         return $cli;
     }
     
+    
 
     public function visualizarProduto() {
         $prod = "";
@@ -70,7 +71,35 @@ class Controlador {
             }
                      
             $prod .= "<button class=\"btn add-to-cart-btn\" data-product-name=\"" . $produto["nome"] . "\" data-product-value=\"" . $produto["valor"] . "\" data-product-image=\"$imageURL\">Adicionar ao Carrinho</button>" .
+           
+
                      "</section>";
+                     
+        }
+        return $prod;
+    }
+
+    public function excluirProduto() {
+        $prod = "";
+        $listaProduto = $this->bancoDeDados->retornarProduto();
+        while ($produto = mysqli_fetch_assoc($listaProduto)) {
+            $prod .= "<section class=\"conteudo-bloco\">" .
+                     "<h2>" . $produto["nome"] . "</h2>" .
+                     "<p>Preço: R$ " . $produto["valor"]  . "</p>";
+            
+            if (isset($produto["imagem"])) {
+                $imageURL = "../imgBanco/" . $produto["imagem"];
+                $prod .= "<img src=\"$imageURL\" alt=\"" . $produto["nome"] . "\" style=\"max-width: 90px; max-height: 90px; width: auto; height: auto; display: block; margin: auto;\">";
+            } else {
+                $imageURL = ""; // Se a imagem não estiver disponível, deixe a URL vazia
+                $prod .= "<p>Imagem não disponível</p>";
+            }
+                     
+            $prod .= "<button class=\"btn add-to-cart-btn\" data-product-name=\"" . $produto["nome"] . "\" data-product-value=\"" . $produto["valor"] . "\" data-product-image=\"$imageURL\">excluir</button>" .
+           
+
+                     "</section>";
+                     
         }
         return $prod;
     }

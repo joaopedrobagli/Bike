@@ -43,6 +43,7 @@
                echo  $control->visualizarCliente();
                
             ?>
+            
             </section>
     </section>
 

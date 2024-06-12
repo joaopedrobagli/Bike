@@ -2,14 +2,15 @@
 <html>
 
 <head>
-    <title>Teste Painel</title>
+    <title>Produtos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css"> 
+  <link rel="stylesheet" href="../css/produto/produtos.css">  
     <style>
       
     </style>
 </head>
-
 <body>
 
     <div class="container-fluid">
@@ -36,16 +37,16 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-10 content">
-                <div class="container">
-                    <h1 class="text-center">Bem-Vindo ao Painel administrativo da Loja </h1>
-                    <p class="welcome-message">Seja bem-vindo à nossa plataforma de administração interna.</p>
-                </div>
-</div>  
-    
-        </div>
-    </div>
 
-</body>
+<section class="conteudo-visualizar" id="produtos">
+      <section class="conteudo-visualizar-box">
+        <?php
+          require_once "../controller/Controlador.php";
+          $control = new Controlador();
+          echo $control->excluirProduto();
+        ?>
+      </section>
+    </section>
 
+    </body>
 </html>
