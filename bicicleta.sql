@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Maio-2024 às 21:42
+-- Tempo de geração: 12-Jun-2024 às 21:46
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -54,20 +54,42 @@ INSERT INTO `cliente` (`nome`, `email`, `cpf`, `senha`) VALUES
 --
 
 CREATE TABLE `produto` (
-  `id` INT AUTO_INCREMENT PRIMARY KEY,
-  `nome` TEXT NOT NULL,
-  `valor` INT NOT NULL,
-  `imagem` TEXT
+  `id` int(11) NOT NULL,
+  `nome` text NOT NULL,
+  `valor` int(11) NOT NULL,
+  `imagem` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Extraindo dados da tabela `produto`
 --
 
-INSERT INTO `produto` (`nome`, `valor`, `imagem`) VALUES
-('joao', 1, ''),
-('skate', 11, ''),
-('skatee fred', 21, '');
+INSERT INTO `produto` (`id`, `nome`, `valor`, `imagem`) VALUES
+(4, 'Clan', 300, '../imgBanco/Clan.jpg'),
+(5, 'The Killer', 240, '../imgBanco/Killer.jpg'),
+(6, 'Void', 2000, '../imgBanco/Void.jpg'),
+(7, 'Neon Rider', 3000, '../imgBanco/neonrider.jpg'),
+(8, 'Dragon', 100, '../imgBanco/Dragon.jpg');
 
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `produto`
+--
+ALTER TABLE `produto`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `produto`
+--
+ALTER TABLE `produto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
