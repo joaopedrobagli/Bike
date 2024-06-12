@@ -41,6 +41,7 @@
             require_once "../controller/Controlador.php";
                 $control = new Controlador();
                echo  $control->visualizarCliente();
+               
             ?>
             </section>
     </section>

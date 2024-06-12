@@ -63,7 +63,7 @@ class Controlador {
             
             if (isset($produto["imagem"])) {
                 $imageURL = "../imgBanco/" . $produto["imagem"];
-                $prod .= "<img src=\"$imageURL\" alt=\"" . $produto["nome"] . "\" style=\"max-width: 90px; max-height: 90px; width: auto; height: auto;\">";
+                $prod .= "<img src=\"$imageURL\" alt=\"" . $produto["nome"] . "\" style=\"max-width: 90px; max-height: 90px; width: auto; height: auto; display: block; margin: auto;\">";
             } else {
                 $imageURL = ""; // Se a imagem não estiver disponível, deixe a URL vazia
                 $prod .= "<p>Imagem não disponível</p>";
