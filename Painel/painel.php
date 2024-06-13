@@ -26,7 +26,7 @@
                         <a class="nav-link btn btn-dark mb-2" href="CadastroProduto.php">Cadastrar Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-dark mb-2" href="Produto.php">Produtos</a>
+                        <a class="nav-link btn btn-dark mb-2" href="ExcluirProduto.php">Excluir Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-danger mb-2" href="../view/login.php">Log Out</a>

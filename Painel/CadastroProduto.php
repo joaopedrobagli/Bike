@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-      body {
+        body {
             background-color: #c5baba86;
         }
 
@@ -45,7 +45,7 @@
 
         .form-group [type="submit"] {
             padding: 10px 20px;
-            width:480px;
+            width: 480px;
             background-color: #f9af04;
             border: none;
             border-radius: 5px;
@@ -53,9 +53,10 @@
             cursor: pointer;
             transition: background-color 0.3s ease-in-out;
         }
+
         .form-ex [type="submit"] {
             padding: 10px 20px;
-            width:480px;
+            width: 480px;
             background-color: #FF0000;
             border: none;
             border-radius: 5px;
@@ -64,7 +65,40 @@
             transition: background-color 0.3s ease-in-out;
         }
 
-        
+        .form-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .custom-file-upload input[type="file"] {
+            display: none;
+        }
+
+        .progress {
+            position: relative;
+            width: 100%;
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            display: none; /* inicialmente oculto */
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #007bff;
+            transition: width 2s;
+        }
 
         .alert {
             margin-top: 20px;
@@ -83,7 +117,6 @@
             border-color: #f5c6cb;
             color: #721c24;
         }
-        
     </style>
 </head>
 
@@ -102,6 +135,9 @@
                         <a class="nav-link btn btn-dark mb-2" href="CadastroProduto.php">Cadastrar Produtos</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link btn btn-dark mb-2" href="ExcluirProduto.php">Excluir Produtos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link btn btn-danger mb-2" href="../view/login.php">Log Out</a>
                     </li>
                     <li class="nav-item">
@@ -109,34 +145,52 @@
                     </li>
                 </ul>
             </div>
-            
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="form-container">
-                    <h2 class="text-center mb-4">Cadastro de Produto</h2>
-                    <form method="POST" action="../processamento/processamento.php" enctype="multipart/form-data">
-    <div class="form-group">
-   
-        <label for="nome">Nome do Produto:</label>
-        <input type="text" placeholder="Nome" name="inputNome">
-    </div>
-    <div class="form-group">
-        <label for="preco">Preço do Produto:</label>
-        <input type="number" placeholder="Valor" name="inputValor">
-    </div>
-    <div class="form-group">
-        <label for="imagem">Imagem do Produto:</label>
-        <input type="file" name="inputImagem" accept="image/*">
-    </div>
- 
-    <div class="form-group">
-        <input type="submit" value="Cadastrar">
-    </div>
-</form>
 
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-container">
+                            <h2 class="text-center mb-4">Cadastro de Produto</h2>
+                            <form method="POST" action="../processamento/processamento.php" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="nome">Nome do Produto:</label>
+                                    <input type="text" placeholder="Nome" name="inputNome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="preco">Preço do Produto:</label>
+                                    <input type="number" placeholder="Valor" name="inputValor">
+                                </div>
+                                <div class="form-group">
+                                    <label for="imagem">Imagem do Produto:</label>
+                                    <label for="inputImagem" class="custom-file-upload">
+                                        Selecione uma imagem
+                                    </label>
+                                    <input type="file" id="inputImagem" name="inputImagem" accept="image/*" onchange="showFileName(this)">
+                                    <div class="progress">
+                                        <div id="progress-bar" class="progress-bar"></div>
+                                    </div>
+                                    <p id="file-name" style="margin-top: 10px;"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Cadastrar">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-   
+            </div>
+        </div>
+    </div>
+    <script>
+        function showFileName(input) {
+            var fileName = document.getElementById('file-name');
+            if (input.files.length > 0) {
+                fileName.textContent = 'Arquivo selecionado: ' + input.files[0].name;
+            } else {
+                fileName.textContent = '';
+            }
+        }
+    </script>
 </body>
-</html>
 
+</html>
