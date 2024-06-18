@@ -2,21 +2,21 @@
 session_start();
 
 require_once("../controller/Controlador.php");
-require_once("../model/Cliente.php");
-require_once("../model/Produto.php");
+require_once("../model/ClienteFactory.php");
+require_once("../model/ProdutoFactory.php");
 require_once("../model/BancoDeDados.php");
 
-$Controlador = new Controlador();
+$controlador = new Controlador();
 
 // Cadastro de cliente
 if (isset($_POST['inputNome']) && isset($_POST['inputEmail']) && isset($_POST['inputCPF']) && isset($_POST['inputSenha'])) {
 
-    $Nome = $_POST['inputNome'];
-    $Email = $_POST['inputEmail'];
-    $CPF = $_POST['inputCPF'];
-    $Senha = $_POST['inputSenha'];
+    $nome = $_POST['inputNome'];
+    $email = $_POST['inputEmail'];
+    $cpf = $_POST['inputCPF'];
+    $senha = $_POST['inputSenha'];
 
-    $Controlador->cadastrarCliente($Nome, $Email, $CPF, $Senha);
+    $controlador->cadastrarCliente($nome, $email, $cpf, $senha);
 
     header('Location:../view/login.php');
     die();
@@ -25,8 +25,8 @@ if (isset($_POST['inputNome']) && isset($_POST['inputEmail']) && isset($_POST['i
 // Cadastro de produto
 if (isset($_POST['inputNome']) && isset($_POST['inputValor']) && isset($_FILES['inputImagem'])) {
 
-    $Nome = $_POST['inputNome'];
-    $Valor = $_POST['inputValor'];
+    $nome = $_POST['inputNome'];
+    $valor = $_POST['inputValor'];
     $imagem = $_FILES['inputImagem'];
 
     // Verifica se não houve erro no upload
@@ -36,7 +36,7 @@ if (isset($_POST['inputNome']) && isset($_POST['inputValor']) && isset($_FILES['
         move_uploaded_file($imagem['tmp_name'], $caminhoImagem);
 
         // Cadastra o produto com a imagem
-        $Controlador->cadastrarProduto($Nome, $Valor, $caminhoImagem);
+        $controlador->cadastrarProduto($nome, $valor, $caminhoImagem);
     } else {
         // Lidar com erros de upload, se necessário
         echo 'Erro ao enviar a imagem.';
@@ -46,14 +46,13 @@ if (isset($_POST['inputNome']) && isset($_POST['inputValor']) && isset($_FILES['
     die();
 }
 
-
 // Verificação de login
 if (isset($_POST['inputEmailLog']) && isset($_POST['inputSenhaLog'])) {
     $email = $_POST['inputEmailLog'];
     $senha = $_POST['inputSenhaLog'];
 
     // Realiza o login com base nos dados fornecidos
-    if ($Controlador->realizarLogin($email, $senha)) {
+    if ($controlador->realizarLogin($email, $senha)) {
         $_SESSION['estaLogado'] = true;
 
         // Verifica se o usuário é um funcionário
@@ -74,8 +73,7 @@ if (isset($_POST['inputEmailLog']) && isset($_POST['inputSenhaLog'])) {
 }
 
 // Função para verificar se uma string termina com outra
-function endsWith($string, $endString)
-{
+function endsWith($string, $endString) {
     $len = strlen($endString);
     if ($len == 0) {
         return true;
@@ -83,14 +81,3 @@ function endsWith($string, $endString)
     return (substr($string, -$len) === $endString);
 }
 ?>
-
-
-
-
-
-
-
- 
-
-
-
