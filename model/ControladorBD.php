@@ -1,7 +1,12 @@
 <?php
 class ControladorBD {
-    public static function criarBancoDeDados($host, $login, $senha, $dataBase) {
-        return BancoDeDados::obterInstancia($host, $login, $senha, $dataBase);
+    private static $instanciaBanco;
+
+    public static function obterInstanciaBanco($host, $login, $senha, $dataBase) {
+        if (!self::$instanciaBanco) {
+            self::$instanciaBanco = BancoDeDados::obterInstancia($host, $login, $senha, $dataBase);
+        }
+        return self::$instanciaBanco;
     }
 }
 ?>
