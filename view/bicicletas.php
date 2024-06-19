@@ -18,7 +18,7 @@
     <header class="header-bg">
       <div class="header container">
         <a href="./inicio.php">
-          <img src="../img/icones/bike.svg" width="76" height="12" alt="">
+        <img src="../img/icones/bike.svg" alt="Logo" class="logo">
         </a>       
         <nav aria-label="primaria">
           <ul class="header-menu font-1-m cor-0">

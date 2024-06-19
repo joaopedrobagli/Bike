@@ -66,6 +66,10 @@
   gap: 32px;
   padding-left: 28px;
 }
+.contato-redes img {
+  width: 50px;
+  height:50px;
+}
 
 @media (max-width: 800px) {
   .contato {

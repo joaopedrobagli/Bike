@@ -18,7 +18,7 @@
   <header class="header-bg">
     <div class="header container">
       <a href="./">
-        <img src="../img/icones/bike.svg" width="76" height="12" alt="">
+        <img src="../img/icones/bike.svg" alt="Logo" class="logo">
       </a>      
       <nav aria-label="primaria">
         <ul class="header-menu font-1-m cor-0"> 
@@ -129,7 +129,7 @@
     </div>
   </article>
 
-  <section class="parceiros" aria-label="Nossos Parceiros">
+  <!-- <section class="parceiros" aria-label="Nossos Parceiros">
     <h2 class="container font-1-xxl">Nossos parceiros<span class="cor-p1">.</span></h2>
 
     <ul>
@@ -142,7 +142,7 @@
       <li><img src="../img/parceiros/wildbeast.svg" width="196" height="34" alt="wildbeast"></li>
       <li><img src="../img/parceiros/surfbot.svg" width="200" height="49" alt="surfbot"></li>
     </ul>
-  </section>
+  </section> -->
 
  <section class="depoimento" aria-label="Depoimento">
     <div>

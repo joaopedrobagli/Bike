@@ -34,10 +34,13 @@
   background: var(--cor-11);
   margin-top: 16px;
 }
-
 .footer-redes {
   display: flex;
   gap: 32px;
+}
+.footer-redes img {
+  width: 50px;
+  height:50px;
 }
 
 .footer a:hover {
