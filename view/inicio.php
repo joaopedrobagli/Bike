@@ -112,12 +112,14 @@
 
         <div class="tecnologia-vantagens">
           <div>
-            <img src="../img/icones/eletrica.svg" width="24" height="24" alt="">
+           <img src="../img/icones/eletrica.svg" alt="Logo" class="eletrica">
+            <!-- <img src="../img/icones/eletrica.svg" width="24" height="24" alt=""> -->
             <h3 class="font-1-m cor-0">Motor elétrico</h3>
             <p class="font-2-s cor-5">Toda equipada com um motor elétrico que possui duração de até 120h. A bateria é recarregada com a sua energia gasta ao pedalar.</p>
           </div>
           <div>
-            <img src="../img/icones/rastreador.svg" width="24" height="24" alt="">
+             <img src="../img/icones/rastreador.svg" alt="Logo" class="eletrica">
+            <!-- <img src="../img/icones/rastreador.svg" width="24" height="24" alt=""> -->
             <h3 class="font-1-m cor-0">Rastreador</h3>
             <p class="font-2-s cor-5">Sabemos o quão preciosa a sua bike é, por isso adicionamos rastreadores e sistemas anti-furto para garantir o seu sossego.</p>
           </div>
@@ -160,7 +162,7 @@
 
   <footer class="footer-bg">
     <div class="footer container">
-      <img src="./img/icones/bike.svg" width="76" height="32" alt="aaa">
+    <img src="../img/icones/bike.svg" alt="Logo" class="logo">
   
       <div class="footer-contato">
         <h3 class="font-2-l-b cir-0">Contato</h3>

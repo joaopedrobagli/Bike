@@ -29,6 +29,10 @@ img {
   height: 190px;
   display: block;
 }
+.eletrica {
+  width: 24px; 
+  height: 24px; 
+}
 
 img[src$=".jpg,png,jpeg"] {
   border-radius: 10px;

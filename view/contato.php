@@ -88,7 +88,7 @@
   <article class="lojas container">
     <h2 class="font-1-xxl">Lojas Fisicas pelo o Brasil <span class="cor-p1">.</span></h2>
     <div class="lojas-item">
-      <img src="./img/lojas/rj.jpg" alt="mapa marcando o endereço">
+      <img src="../img/lojas/rj.jpg" alt="mapa marcando o endereço">
       <div class="lojas-conteudo">
         <h3 class="font-1-xl">Rio de Janeiro</h3>
         <div class="lojas-dados font-2-s cor-8">
@@ -99,12 +99,12 @@
           <a href="tel:+551899999999">+55 18 9999-9999</a>
           <a href="mailto:@.com">sp@.com</a>
         </div>
-        <p class="lojas-tempo font-1-s"><img src="./img/icones/horario.svg" alt="">08-18h de segunda a sabado.</p>
+        <p class="lojas-tempo font-1-s"><img src="../img/icones/horario.svg" alt="Logo" class="eletrica">08-18h de segunda a sabado.</p>
       </div>
     </div>
     
     <div class="lojas-item">
-      <img src="./img/lojas/sp.jpg" alt="mapa marcando o endereço em rua ali perto 999 São Paulo - SP">
+      <img src="../img/lojas/sp.jpg" alt="mapa marcando o endereço em rua ali perto 999 São Paulo - SP">
       <div class="lojas-conteudo">
         <h3 class="font-1-xl">São Paulo</h3>
           <div class="lojas-dados font-2-s cor-8">
@@ -115,14 +115,14 @@
           <a href="tel:+551899999999">+55 18 9999-9999</a>
           <a href="mailto:sp@.com">sp@.com</a>
         </div>
-        <p class="lojas-tempo font-1-s"><img src="./img/icones/horario.svg" alt="">08-18h de seg à sáb</p>
+        <p class="lojas-tempo font-1-s"><img src="../img/icones/horario.svg" alt="Logo" class="eletrica">08-18h de seg à sáb</p>
       </div>
     </div>
   </article>
 
   <footer class="footer-bg">
     <div class="footer container">
-      <img src="./img/" alt="">
+    <img src="../img/icones/bike.svg" alt="Logo" class="logo">
       <div class="footer-contato">
         <h3 class="font-2-l-b cor-0">Contato</h3>
         <ul class="font-2-m cor-5">

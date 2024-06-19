@@ -14,7 +14,7 @@
   <header class="header-bg">
     <div class="header container">
       <a href="./">
-        <img  src="../img/icones/bike.svg" width="76" height="12" alt="">
+      <img src="../img/icones/bike.svg" alt="Logo" class="logo">
       </a>      
     </div>
   </header>
@@ -32,7 +32,7 @@
     </section>
     <footer class="footer-bg">
     <div class="footer container">
-      <img src="../img/icones/bike.svg" width="76" height="12" alt="">
+    <img src="../img/icones/bike.svg" alt="Logo" class="logo">
       <div class="footer-contato">
         <h3 class="font-2-l-b cor-0">Contato</h3>
         <ul class="font-2-m cor-5">
